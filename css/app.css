@@ -295,7 +295,11 @@ footer p {
 /* Media Queries For Responsiveness */
 
 @media screen and (max-width : 480px){
-	.deck {
+    header h1 {
+        font-size: 30px;
+    }
+    
+    .deck {
 		width: 350px;
 		min-height: 100vw;
 	}	
@@ -318,9 +322,7 @@ footer p {
 }
 
 @media screen and (min-width : 481px) and (max-width : 768px){
-    header h1 {
-        font-size: 300px;
-    }
+    
     
     .deck {
 		width: 500px;
