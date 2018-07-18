@@ -197,6 +197,24 @@ function sayNoPrompt() {
     })
 }
 
+//function for saveProgressSuccess i.e when the suer successfully submits their progress
+function saveProgressSuccessPrompt() {
+    $('.saveProgress').css('display', 'none');
+    $('.saveProgressSuccess').addClass('animated zoomIn');
+    $('.saveProgressSuccess').css('display', 'flex');
+}
+
+//save game progress prompt
+function showSaveGameProgressPrompt() {
+    $('.end-modal').css('display', 'none');
+    $('.saveProgress').addClass('animated slideInRight');
+    $('.saveProgress').css('display', 'flex');
+
+    $('#saveProgressButton').click(function() {
+        setUserData();
+        saveProgressSuccessPrompt();
+    });
+}
 
 //function for endgame
 function endGame(){
@@ -216,6 +234,8 @@ function endGame(){
     //If user don't want to play further
    $('#not-started').click(sayNoPrompt);
 
+    //Event function called when user wants to save his progress
+   $('#saveProgressAskButton').click(showSaveGameProgressPrompt);
 
 
 }
@@ -323,6 +343,25 @@ $(document).ready(function (){
     $('#restart').click(resetGamePrompt);
 });
 
+//function for set user data to database when the save progress button clicks
+function setUserData() {
+    let stars = $('.fa-star').length;
+    let userName = $('#userName').val();
+    let timeByUser = timeCount;
+    let level = '';
+    
+    // Save level value to database according to a particular level
+    if(clickedEasy === true) {
+        level = 'Easy';
+    } else if(clickedMedium === true) {
+        level = 'Medium';
+    } else if(clickedHard === true) {
+        level = 'Hard';
+    }
+
+    // calling function that writes data in database
+    writeData(userName, stars, timeByUser, level);
+}
 
 //source https://github.com/daneden/animate.css
 $.fn.extend({
@@ -352,3 +391,36 @@ $.fn.extend({
     },
 });
 
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyCm8YjPHfm-dpB-4h9ID3esUOL9OFODwRk",
+    authDomain: "memory-card-game-5db8e.firebaseapp.com",
+    databaseURL: "https://memory-card-game-5db8e.firebaseio.com",
+    projectId: "memory-card-game-5db8e",
+    storageBucket: "memory-card-game-5db8e.appspot.com",
+    messagingSenderId: "632719869092"
+  };
+  firebase.initializeApp(config);
+
+// Reference of the database service
+var firebase = firebase.database().ref();
+
+//Reference of this function
+//https://firebase.google.com/docs/database/web/read-and-write
+// function to write data in database
+function writeData(userName, stars, timeByUser, level) {
+    let newUserDetails = {
+        name : userName,
+        stars : stars,
+        time : timeByUser, 
+        level : level
+    }
+
+    // Get a key for a new Post.
+    let newPostKey = firebase.push().key;
+
+    let updates = {};
+    updates[newPostKey] = newUserDetails;
+
+    return firebase.update(updates);
+}
