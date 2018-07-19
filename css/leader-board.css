@@ -1,0 +1,50 @@
+/* CSS for leader board */
+
+tr:first-child {
+    background-color: red;
+}
+
+tr:nth-child(even){
+    text-align: center;
+    background-color: #00ffa3a3;
+}
+
+tr:nth-child(odd) {
+    text-align: center;
+    background-color: #ddd;
+    
+}
+
+table {
+    width: 600px;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+p {
+    font-size: 25px;
+}
+
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #dc143C;
+}
+
+@media screen and (max-width : 480px){
+    footer p {
+        font-size: 15px;
+    }
+    
+    table {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width : 481px) and (max-width : 768px){
+   table {
+       width: 50%;
+   }
+}
