@@ -51,42 +51,22 @@ $(document).ready(function() {
         });
 
         // Appending Fetcehd data to Easy LeaderBoard Table
-        if(arrEasy.length >= 5){
-            for(let i = 0; i < 5; i++) {
-                $('#easy-tbody').append(`<tr><td>${arrEasy[i].name}</td><td>${arrEasy[i].stars}</td><td>${arrEasy[i].time}</td><td>${arrEasy[i].level}</td></tr>`);
-            }
-        } else if(arrEasy.length < 5) {
-            for(let i = 0; i < arrEasy.length; i++) {
-                $('#easy-tbody').append(`<tr><td>${arrEasy[i].name}</td><td>${arrEasy[i].stars}</td><td>${arrEasy[i].time}</td><td>${arrEasy[i].level}</td></tr>`);
-            }
+        for(let i = 0; i < 5; i++) {
+            $('#easy-tbody').append(`<tr><td>${arrEasy[i].name}</td><td>${arrEasy[i].stars}</td><td>${arrEasy[i].time}</td><td>${arrEasy[i].level}</td></tr>`);
         }
-        
 
        
 
         // Appending Fetcehd data to Medium LeaderBoard Table
-        if(arrMedium.length >= 5){
-            for(let i = 0; i < 5; i++) {
-                $('#medium-tbody').append(`<tr><td>${arrMedium[i].name}</td><td>${arrMedium[i].stars}</td><td>${arrMedium[i].time}</td><td>${arrMedium[i].level}</td></tr>`);
-            }
-        } else if(arrMedium.length < 5) {
-            for(let i = 0; i < arrMedium.length; i++) {
-                $('#medium-tbody').append(`<tr><td>${arrMedium[i].name}</td><td>${arrMedium[i].stars}</td><td>${arrMedium[i].time}</td><td>${arrMedium[i].level}</td></tr>`);
-            }
+        for(let i = 0; i < arrMedium.length; i++) {
+            $('#medium-tbody').append(`<tr><td>${arrMedium[i].name}</td><td>${arrMedium[i].stars}</td><td>${arrMedium[i].time}</td><td>${arrMedium[i].level}</td></tr>`);
         }
 
 
-        // Appending Fetcehd data to Hard LeaderBoard Table
-        if(arrHard.length >= 5){
-            for(let i = 0; i < 5; i++) {
-                $('#hard-tbody').append(`<tr><td>${arrHard[i].name}</td><td>${arrHard[i].stars}</td><td>${arrHard[i].time}</td><td>${arrHard[i].level}</td></tr>`);
-            }
-        } else if(arrHard.length < 5) {
-            for(let i = 0; i < arrHard.length; i++) {
-                $('#hard-tbody').append(`<tr><td>${arrHard[i].name}</td><td>${arrHard[i].stars}</td><td>${arrHard[i].time}</td><td>${arrHard[i].level}</td></tr>`);
-            }
+          // Appending Fetcehd data to Hard LeaderBoard Table
+          for(let i = 0; i < arrHard.length; i++) {
+            $('#hard-tbody').append(`<tr><td>${arrHard[i].name}</td><td>${arrHard[i].stars}</td><td>${arrHard[i].time}</td><td>${arrHard[i].level}</td></tr>`);
         }
-        
 
         console.log(arrMedium);
         console.log(arrEasy);
