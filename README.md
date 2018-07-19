@@ -9,7 +9,6 @@ Check out it's live demo from here :- https://praveen-me.github.io/memory-card-g
 * [Features](#features)
 * [External Techs Used](#external-techs-used)
 * [Contribution](#contribution)
-* [License](#license)
 
 ***
 ### Tips to play game 
@@ -34,9 +33,5 @@ Check out it's live demo from here :- https://praveen-me.github.io/memory-card-g
 ### Contribution
 If you want to contribute in this project that I really appreciate for this. For contribute tips click on [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 ***
-
-### License
-This project is under [GNU GPL v3](https://choosealicense.com/licenses/gpl-3.0/). Click on link for know more.
-
 
 
