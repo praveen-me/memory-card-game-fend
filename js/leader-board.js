@@ -1,7 +1,8 @@
+let arrEasy = [];
+
 $(document).ready(function() {
     // Array to store values
     let arr = [];
-    let arrEasy = [];
     let arrMedium = [];
     let arrHard = [];
     
@@ -36,18 +37,18 @@ $(document).ready(function() {
 
         // Sorting Easy Array
         arrEasy.sort((a,b) => {
-            return a.time > b.time;
+            return a.time - b.time;
         });
 
         //Sorting Medium Array
         arrMedium.sort((a,b) => {
-            return a.time > b.time;
+            return a.time - b.time;
         });
 
 
         //Sorting Hard Array
         arrHard.sort((a,b) => {
-            return a.time > b.time;
+            return a.time - b.time;
         });
 
         // Appending Fetcehd data to Easy LeaderBoard Table
