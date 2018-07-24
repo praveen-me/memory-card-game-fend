@@ -1,10 +1,11 @@
-let arrEasy = [];
+
 
 $(document).ready(function() {
     // Array to store values
     let arr = [];
     let arrMedium = [];
     let arrHard = [];
+    let arrEasy = [];
     
 
     // Fetch the data strored in database in the JSON format
