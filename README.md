@@ -1,4 +1,4 @@
-# Memory Game Project
+# Memory Card Game Project
 
 This Project creates during the Udacity's Front End Nanodegree Program. This is basically a memory memorization game.
 
